@@ -1,0 +1,7 @@
+# pip install -r requirements.txt
+
+Flask==3.0.3
+Flask-Cors
+python-dotenv==1.0.1
+requests
+PyJWT==2.9.0 
