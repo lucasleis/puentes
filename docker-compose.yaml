@@ -1,0 +1,42 @@
+#version: '3.8'
+
+services:
+#  backend:
+#    build:
+#      context: ./backend
+#      args:
+#      - HTTP_PROXY=http://10.30.28.25:80
+#      - HTTPS_PROXY=http://10.30.28.25:80
+#      - http_proxy=http://10.30.28.25:80
+#      - https_proxy=http://10.30.28.25:80
+#      - HTTP_PROXY_REQUEST_FULLURI=0 
+#      - HTTPS_PROXY_REQUEST_FULLURI=0 
+#      - NO_PROXY=harbor.prd.afip.gob.ar,
+#    ports:
+#      - "5000:5000"  # El puerto 5000 de la API será expuesto
+#    environment:
+#      - FLASK_ENV=development
+#    networks:
+#      - mynetwork
+#    depends_on:
+#      - frontend
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+      - HTTP_PROXY=http://10.30.28.143:80
+      - HTTPS_PROXY=http://10.30.28.143:80
+      - http_proxy=http://10.30.28.143:80
+      - https_proxy=http://10.30.28.143:80
+      - HTTP_PROXY_REQUEST_FULLURI=0 
+      - HTTPS_PROXY_REQUEST_FULLURI=0 
+      - NO_PROXY=harbor.prd.afip.gob.ar,
+    ports:
+      - "3000:3000"  # El puerto 3000 en tu máquina será redirigido al puerto 80 del contenedor
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
