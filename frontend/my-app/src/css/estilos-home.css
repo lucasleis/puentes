@@ -1,0 +1,131 @@
+/* Contenedor principal */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.header {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Contenedor del input y botón */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Estilo del input */
+.input {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.input:focus {
+  border-color: #007bff;
+  padding: 12px; 
+}
+
+/* Estilo del botón */
+.button {
+  width: 15%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.eventos-list {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+}
+
+.evento-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  flex-direction: column;  /* Aquí apilamos los eventos verticalmente */
+}
+
+.evento-text {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column; /* Para apilar los botones verticalmente */
+  gap: 10px; /* Espacio entre los botones */
+  width: 100%;
+  align-items: center; /* Alineamos los botones al centro */
+}
+
+/* Estilos de botones de modificar y eliminar */
+.button-modificar {
+  width: 100%; /* Hacemos el botón de modificar más grande */
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.button-eliminar {
+  width: 100%; /* Hacemos el botón de eliminar más grande */
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  margin-top: 10px; /* Separa un poco más el botón de eliminar */
+}
+
+/* Animaciones de los botones */
+.animated-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.animated-buttons .ui.button {
+  padding: 40px 40px;
+}
+
+/* Estilo de los inputs cuando se está editando un evento */
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 0;
+}
+
+.input:focus {
+  border-color: #007bff;
+}

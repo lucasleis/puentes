@@ -1,0 +1,72 @@
+/* Estilos básicos */
+nav {
+  background-color: #333;
+  padding: 1rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  color: #333;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.logo {
+  font-size: 3rem; /* Tamaño grande para el logo */
+  margin-right: 30px; /* Espacio adicional a la derecha */
+}
+
+.logo .ui.icon {
+  color: #007bff; /* Cambiar el color del icono, si deseas */
+}
+
+/* Efecto hover en logo */
+.logo:hover {
+  transform: rotate(360deg);
+  transition: transform 0.6s ease;
+}
+
+/* Menú con iconos */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link:hover {
+  color: #ff6347;
+}
