@@ -39,9 +39,9 @@
   padding: 12px; 
 }
 
-/* Estilo del botón */
+/* Estilo del botón Agregar evento */
 .button {
-  width: 15%;
+  width: 25%; /* Aumentamos el ancho del botón (ajustalo al valor que prefieras) */
   padding: 10px;
   font-size: 1rem;
   background-color: #007bff;
@@ -55,6 +55,7 @@
 .button:hover {
   background-color: #0056b3;
 }
+
 
 .eventos-list {
   list-style-type: none;
@@ -129,3 +130,20 @@
 .input:focus {
   border-color: #007bff;
 }
+
+
+.error-text {
+  color: #D8000C;
+  background-color: #FFBABA;
+  padding: 5px 5px 5px 5px; /* Mantén el padding para que el texto esté centrado */
+  border: 1px solid #D8000C;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem; /* Igualamos el tamaño de la fuente con el del botón */
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto dentro del mensaje de error */
+  justify-content: center; /* Centra horizontalmente el texto */
+  width: 50%; /* Ampliamos el ancho al 40% */
+  height: 48px; /* Igualamos la altura al del botón */
+}
+

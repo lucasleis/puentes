@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import './css/estilos-home.css';
 import './css/estilos-basicos.css';
+import 'semantic-ui-css/semantic.min.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
