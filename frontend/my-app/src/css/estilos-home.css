@@ -41,7 +41,7 @@
 
 /* Estilo del botón Agregar evento */
 .button {
-  width: 25%; /* Aumentamos el ancho del botón (ajustalo al valor que prefieras) */
+  width: 25%;
   padding: 10px;
   font-size: 1rem;
   background-color: #007bff;
@@ -73,7 +73,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 70%;
-  flex-direction: column;  /* Aquí apilamos los eventos verticalmente */
+  flex-direction: column;  
 }
 
 .evento-text {
@@ -83,25 +83,25 @@
 
 .button-group {
   display: flex;
-  flex-direction: column; /* Para apilar los botones verticalmente */
-  gap: 10px; /* Espacio entre los botones */
+  flex-direction: column; 
+  gap: 10px; 
   width: 100%;
-  align-items: center; /* Alineamos los botones al centro */
+  align-items: center; 
 }
 
 /* Estilos de botones de modificar y eliminar */
 .button-modificar {
-  width: 100%; /* Hacemos el botón de modificar más grande */
+  width: 100%; 
   padding: 12px 20px;
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
 .button-eliminar {
-  width: 100%; /* Hacemos el botón de eliminar más grande */
+  width: 100%; 
   padding: 12px 20px;
   font-size: 1.2rem;
-  margin-top: 10px; /* Separa un poco más el botón de eliminar */
+  margin-top: 10px; 
 }
 
 /* Animaciones de los botones */
@@ -135,15 +135,15 @@
 .error-text {
   color: #D8000C;
   background-color: #FFBABA;
-  padding: 5px 5px 5px 5px; /* Mantén el padding para que el texto esté centrado */
+  padding: 5px 5px 5px 5px; 
   border: 1px solid #D8000C;
   border-radius: 4px;
   font-weight: bold;
-  font-size: 1rem; /* Igualamos el tamaño de la fuente con el del botón */
+  font-size: 1rem;
   display: flex;
-  align-items: center; /* Centra verticalmente el texto dentro del mensaje de error */
-  justify-content: center; /* Centra horizontalmente el texto */
-  width: 50%; /* Ampliamos el ancho al 40% */
-  height: 48px; /* Igualamos la altura al del botón */
+  align-items: center; 
+  justify-content: center;
+  width: 50%; 
+  height: 48px; 
 }
 
