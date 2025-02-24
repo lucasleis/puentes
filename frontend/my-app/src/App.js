@@ -7,7 +7,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
 
-import Home from './pages/Home.js';
+import Evento from './pages/Evento.js';
 import About from './pages/About.js';
 import Loading from './pages/Loading.js';
 import CvViewer from './pages/CvViewer.js';
@@ -21,26 +21,26 @@ const App = () => {
         <nav>
           <ul className="navbar">
             <li className="logo">
-              <Link to="/Home">
+              <Link to="/">
                 <Icon name="chess rook" size="huge" /> 
               </Link>
             </li>
             <li>
-              <Link className="nav-link" to="/Home">
+              <Link className="nav-link" to="/Evento">
                 <Icon name="home" size="large" />
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/About">
-                <Icon name="info circle" size="large" />
-                Acerca de
+                Eventos
               </Link>
             </li>
             <li>
               <Link className="nav-link" to="/Loading">
                 <Icon name="spinner" size="large" />
                 Loading
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="/About">
+                <Icon name="info circle" size="large" />
+                Acerca de
               </Link>
             </li>
             <li>
@@ -54,7 +54,7 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/Evento" element={<Evento />} />
           <Route path="/About" element={<About />} />
           <Route path="/Loading" element={<Loading />} />
           <Route path="/CV" element={<CvViewer />} />

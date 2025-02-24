@@ -1,24 +1,35 @@
 import React from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import '../css/about.css';  // Asegúrate de tener el archivo CSS para los estilos
+import '../css/about.css';  
 
 const About = () => {
   return (
     <div className="about-container">
       <header className="about-header">
-        <h1>Sobre Nosotros</h1>
-        <p className="about-subtitle">Conoce más sobre nuestra aplicación y misión.</p>
+        <h1>About me</h1>
+        <p className="about-subtitle">A little resume.</p>
       </header>
 
       <div className="about-content">
         <div className="about-description">
           <p>
-            Nuestra aplicación fue creada para ayudar a usuarios de todo el mundo a gestionar eventos y actividades
-            de manera eficiente. Con nuestra plataforma, puedes agregar, modificar y eliminar eventos de forma rápida,
-            todo en un solo lugar. ¡Tu organización y productividad mejorarán enormemente!
+            I am a Software Engineer, recently graduated, with a focus on backend development. I specialize in building robust APIs and 
+            microservices, utilizing both functional and object-oriented programming paradigms. My development approach is guided by solid 
+            principles, ensuring scalability and maintainability in every project.
           </p>
           <p>
-            Nos enorgullece ofrecer una herramienta fácil de usar, con un diseño intuitivo y flexible que se adapta a tus necesidades.
+            My expertise includes creating, testing, and maintaining reliable software systems. I thrive in collaborative environments, 
+            working closely with teams to optimize processes and drive innovation. I'm dedicated to delivering high-quality results and 
+            constantly seeking opportunities to enhance system performance.
+          </p>
+          <p>
+            As a proactive problem-solver with strong communication skills, I actively contribute to team knowledge-sharing and continuous 
+            learning. Whether working on web applications, mobile apps, or backend systems, I am committed to improving my skills and 
+            providing exceptional solutions to clients.
+          </p>
+          <p>
+            I am particularly interested in remote freelancing opportunities, where I can apply and expand my programming skills to 
+            develop cutting-edge internet solutions.
           </p>
         </div>
 
@@ -43,7 +54,7 @@ const About = () => {
 
       <div className="about-footer">
         <Button primary size="large">
-          Contáctanos
+          Contact me 
           <Icon name="envelope" />
         </Button>
       </div>

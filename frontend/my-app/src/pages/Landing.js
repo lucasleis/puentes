@@ -11,8 +11,8 @@ const Landing = () => {
       <h1 className="landing-title">¡Bienvenido!</h1>
       <p>Explora las diferentes secciones:</p>
       <div className="menu-links">
-        <Link to="/Home" className="menu-item">
-          <Icon name="home" size="big" /> Inicio
+        <Link to="/Evento" className="menu-item">
+          <Icon name="home" size="big" /> Eventos
         </Link>
         <Link to="/About" className="menu-item">
           <Icon name="info circle" size="big" /> Acerca de
