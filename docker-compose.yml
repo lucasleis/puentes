@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - HTTP_PROXY=http://10.30.28.143:80
+      - HTTPS_PROXY=http://10.30.28.143:80
+    depends_on:
+      - redis
+    networks:
+      - app_network
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - HTTP_PROXY=http://10.30.28.143:80
+      - HTTPS_PROXY=http://10.30.28.143:80
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge

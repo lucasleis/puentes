@@ -1,10 +1,10 @@
 # Dockerfile for React frontend
-FROM harbor.prd.afip.gob.ar/dockerhub/library/node:lts
+FROM node:lts
 
 WORKDIR /app
 
 # Configura el proxy para apt
-RUN echo 'Acquire::http::Proxy "http://10.30.28.143:80";' > /etc/apt/apt.conf.d/01proxy
+#RUN echo 'Acquire::http::Proxy "http://10.30.28.143:80";' > /etc/apt/apt.conf.d/01proxy
 
 # Instala jq (herramienta para manipular JSON)
 RUN apt-get update && apt-get install -y jq
@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y jq
 RUN npm init -y
 
 # Configuración del proxy
-ENV HTTP_PROXY=http://10.30.28.143:80
-ENV HTTPS_PROXY=http://10.30.28.143:80
+#ENV HTTP_PROXY=http://10.30.28.143:80
+#ENV HTTPS_PROXY=http://10.30.28.143:80
 
 # Configura el proxy para npm
 RUN npm config set proxy ${HTTP_PROXY}

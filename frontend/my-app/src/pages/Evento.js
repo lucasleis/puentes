@@ -67,7 +67,7 @@ const Evento = () => {
     setMinutos('');
   };
 
-  const handleAgregarConfirmado = () => {
+  const handleAgregarConfirmado = async () => {
     const mensajeError = validarTexto(evento) || validarFecha(fecha);
     if (mensajeError) {
       setError(mensajeError);
@@ -77,6 +77,7 @@ const Evento = () => {
       setError('⚠️ Debes seleccionar una hora y minutos');
       return;
     }
+    
     const nuevoEvento = `${evento} - ${fecha} ${hora}:${minutos}`;
     setEventos([...eventos, nuevoEvento]);
     setEvento('');
@@ -85,6 +86,30 @@ const Evento = () => {
     setMinutos('');
     setError('');
     setModalOpen(false);
+  
+    try {
+      const response = await fetch('http://localhost:5000/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`, // Reemplaza con el JWT real
+        },
+        body: JSON.stringify({
+          phone_number: '123456789', // Reemplazar con el usuario real
+          secure_key: 'mi_clave_segura', // Reemplazar con el usuario real
+          event_data: nuevoEvento,
+        }),
+      });
+  
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || 'Error al crear el evento');
+      }
+  
+      console.log('Evento creado:', data);
+    } catch (error) {
+      console.error('Error al enviar evento:', error);
+    }
   };
 
   const handleModificar = (index) => {

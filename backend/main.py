@@ -1,5 +1,6 @@
 import os
 import jwt
+import redis
 import datetime
 from flask import Flask, request, jsonify
 from dotenv import load_dotenv
@@ -20,6 +21,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Simulación de base de datos en memoria
 calendarios_vinculados = {}
 eventos = {}
+
+# Inicializacion de bd redis
+redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
 def validar_jwt(token):
     try:
@@ -120,12 +124,11 @@ def crear_evento():
         if phone_number not in calendarios_vinculados or calendarios_vinculados[phone_number]['secure_key'] != secure_key:
             return jsonify({"error": "El número de teléfono o la clave de seguridad no coinciden"}), 400
 
-        # Crear un ID único para el evento
-        event_id = str(len(eventos) + 1)
-        eventos[event_id] = {"phone_number": phone_number, "event_data": event_data}
+        # Crear un ID único y almacenar en Redis
+        event_id = str(redis_client.incr("event_id"))
+        redis_client.hset(f"evento:{event_id}", mapping={"phone_number": phone_number, "event_data": event_data})
 
         return jsonify({"mensaje": "Evento creado exitosamente", "event_id": event_id}), 201
-    
     else:
         return jsonify({"error": "Token de autorización inválido"}), 401
 
