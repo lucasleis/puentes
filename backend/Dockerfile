@@ -6,9 +6,9 @@ FROM python:3.9-slim AS crea_env
 WORKDIR /app
 
 # Instalo Redis
-RUN sudo apt update
-RUN sudo apt install redis-server
-RUN sudo service redis-server start
+RUN apt update
+RUN apt install -y redis-server
+RUN service redis-server start
 #RUN docker run --name redis -d -p 6379:6379 redis
 
 # Crear venv

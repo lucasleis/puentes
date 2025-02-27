@@ -15,19 +15,19 @@ services:
     networks:
       - app_network
 
-  frontend:
-    build: 
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      - HTTP_PROXY=http://10.30.28.143:80
-      - HTTPS_PROXY=http://10.30.28.143:80
-    depends_on:
-      - backend
-    networks:
-      - app_network
+  #frontend:
+  #  build: 
+  #    context: ./frontend
+  #    dockerfile: Dockerfile
+  #  ports:
+  #    - "3000:3000"
+  #  environment:
+  #    - HTTP_PROXY=http://10.30.28.143:80
+  #    - HTTPS_PROXY=http://10.30.28.143:80
+  #  depends_on:
+  #    - backend
+  #  networks:
+  #    - app_network
 
   redis:
     image: redis:alpine

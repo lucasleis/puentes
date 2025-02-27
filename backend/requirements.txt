@@ -5,3 +5,5 @@ Flask-Cors
 python-dotenv==1.0.1
 requests
 PyJWT==2.9.0 
+redis
+redis-server

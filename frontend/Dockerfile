@@ -46,15 +46,15 @@ RUN npm install --save-dev @babel/core @babel/preset-react babel-loader
 
 # Aquí no usamos `npm install`, ya que copias las dependencias previamente instaladas
 # Copia el archivo package.json y node_modules desde el host (si ya están instalados)
-COPY ./empty-react-project/package.json /app/package.json
-COPY ./empty-react-project/node_modules /app/node_modules  
+COPY ./my-app/package.json /app/package.json
+COPY ./my-app/node_modules /app/node_modules  
 
 # Copia todo el proyecto al contenedor
 COPY . .
 
 # Copia el archivo index.html al contenedor
-COPY /empty-react-project/index.html /app/public/index.html
-COPY ./empty-react-project/src /app/src
+#COPY /my-app/index.html /app/public/index.html
+COPY ./my-app/src /app/src
 # COPY ./empty-react-project/src/index.js /app/src/index.js
 
 # Exponer el puerto 3000 y arranca la aplicación
